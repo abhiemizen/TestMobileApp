@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  mobsf:
+    image: opensecurity/mobile-security-framework-mobsf:latest
+    container_name: mobsf
+    ports:
+      - "8000:8000"
+    environment:
+      - MANDATORY_WP_CHECK=False
+    volumes:
+      - ./mobsf/uploads:/root/.MobSF/uploads
+    networks:
+      - mobsf-network
+
+networks:
+  mobsf-network:
+    driver: bridge
+
