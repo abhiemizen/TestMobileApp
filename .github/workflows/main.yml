@@ -24,7 +24,7 @@ jobs:
         run: ./gradlew assembleDebug
 
       - name: Start MobSF in Docker
-        run: docker-compose up -d
+        run: docker compose up -d
       
       - name: Wait for MobSF to be ready
         run: sleep 60
